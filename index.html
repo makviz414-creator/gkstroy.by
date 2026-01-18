@@ -743,11 +743,47 @@
             observer.observe(card);
         });
         
+        // Код для автоматического скрытия/показа хедера при прокрутке
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+        
+        // Добавляем отступ для body, чтобы контент не скрывался под fixed хедером
+        document.body.style.paddingTop = headerHeight + 'px';
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Прокрутка вниз - скрываем хедер
+                header.style.transform = 'translateY(-100%)';
+                header.style.transition = 'transform 0.3s ease';
+            } else {
+                // Прокрутка вверх - показываем хедер
+                header.style.transform = 'translateY(0)';
+                header.style.transition = 'transform 0.3s ease';
+            }
+            
+            // Если мы в самом верху страницы - всегда показываем хедер
+            if (scrollTop < 50) {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // Пересчитываем высоту хедера при изменении размера окна
+        window.addEventListener('resize', function() {
+            const newHeaderHeight = header.offsetHeight;
+            document.body.style.paddingTop = newHeaderHeight + 'px';
+        });
+        
         console.log('Сайт компании "ГранитКомплексСтрой" загружен с белой шапкой');
     </script>
 </body>
 
 </html>
+
 
 
 
