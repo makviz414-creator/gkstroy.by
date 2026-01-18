@@ -691,7 +691,7 @@
         </div>
     </footer>
 
-    <script>
+        <script>
         // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -746,10 +746,16 @@
         // Код для автоматического скрытия/показа хедера при прокрутке
         let lastScrollTop = 0;
         const header = document.querySelector('header');
-        const headerHeight = header.offsetHeight;
+        const heroSection = document.querySelector('.hero');
         
-        // Добавляем отступ для body, чтобы контент не скрывался под fixed хедером
-        document.body.style.paddingTop = headerHeight + 'px';
+        // Устанавливаем начальный отступ для hero-секции
+        function updateHeroMargin() {
+            const headerHeight = header.offsetHeight;
+            heroSection.style.marginTop = headerHeight + 'px';
+        }
+        
+        // Вызываем при загрузке
+        updateHeroMargin();
         
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -772,17 +778,15 @@
             lastScrollTop = scrollTop;
         });
         
-        // Пересчитываем высоту хедера при изменении размера окна
-        window.addEventListener('resize', function() {
-            const newHeaderHeight = header.offsetHeight;
-            document.body.style.paddingTop = newHeaderHeight + 'px';
-        });
+        // Пересчитываем при изменении размера окна
+        window.addEventListener('resize', updateHeroMargin);
         
         console.log('Сайт компании "ГранитКомплексСтрой" загружен с белой шапкой');
     </script>
 </body>
 
 </html>
+
 
 
 
