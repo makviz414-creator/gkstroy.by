@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация | ГранитКомплексСтрой</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .doc-header {
+            background: linear-gradient(to right, #8B0000, #B22222);
+            color: white;
+            padding: 20px 0;
+            border-bottom: 3px solid #000000;
+            text-align: center;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .doc-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Галерея документов */
+        .doc-gallery {
+            padding: 50px 0;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .doc-item {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .doc-item:hover {
+            border-color: #8B0000;
+            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .doc-img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f8f8;
+        }
+
+        .doc-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .doc-item:hover .doc-img {
+            transform: scale(1.05);
+        }
+
+        .doc-title {
+            padding: 15px;
+            text-align: center;
+            background: #000000;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .doc-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(139, 0, 0, 0.9);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .doc-footer {
+            background: linear-gradient(to right, #000000, #222222);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 5px solid #8B0000;
+        }
+
+        /* Инструкция */
+        .instruction {
+            background: #f8f8f8;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #8B0000;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        .instruction h3 {
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+
+        .instruction ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .doc-header h1 {
+                font-size: 2rem;
+            }
+            
+            .back-button {
+                position: relative;
+                left: 0;
+                top: 0;
+                margin-bottom: 15px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка страницы документации -->
+    <header class="doc-header">
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Назад на сайт
+            </a>
+            <h1><i class="fas fa-file-alt"></i> Документация компании</h1>
+            <p>Официальные документы ООО «ГранитКомплексСтрой»</p>
+        </div>
+    </header>
+
+    <!-- Галерея документов -->
+    <section class="doc-gallery">
+        <div class="container">
+            <!-- Инструкция -->
+            <div class="instruction">
+                <h3>Как добавить свои документы:</h3>
+                <ol>
+                    <li>Положите фотографии документов в папку с сайтом</li>
+                    <li>Замените пути к изображениям ниже на ваши файлы</li>
+                    <li>Измените названия документов</li>
+                </ol>
+            </div>
+
+            <div class="doc-grid">
+                <!-- Документ 1 -->
+                <div class="doc-item">
+                    <div class="doc-img-container">
+                        <span class="doc-number">Док. 1</span>
+                        <!-- ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШУ ФОТОГРАФИЮ -->
+                        <img src="https://via.placeholder.com/600x400/8B0000/FFFFFF?text=Свидетельство+о+регистрации" 
+                             alt="Свидетельство о регистрации" 
+                             class="doc-img">
+                    </div>
+                    <div class="doc-title">Свидетельство о регистрации</div>
+                </div>
+                
+                <!-- Документ 2 -->
+                <div class="doc-item">
+                    <div class="doc-img-container">
+                        <span class="doc-number">Док. 2</span>
+                        <!-- ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШУ ФОТОГРАФИЮ -->
+                        <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Лицензия+на+деятельность" 
+                             alt="Лицензия на деятельность" 
+                             class="doc-img">
+                    </div>
+                    <div class="doc-title">Лицензия на деятельность</div>
+                </div>
+                
+                <!-- Документ 3 -->
+                <div class="doc-item">
+                    <div class="doc-img-container">
+                        <span class="doc-number">Док. 3</span>
+                        <!-- ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШУ ФОТОГРАФИЮ -->
+                        <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Устав+компании" 
+                             alt="Устав компании" 
+                             class="doc-img">
+                    </div>
+                    <div class="doc-title">Устав компании</div>
+                </div>
+                
+                <!-- Документ 4 -->
+                <div class="doc-item">
+                    <div class="doc-img-container">
+                        <span class="doc-number">Док. 4</span>
+                        <!-- ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШУ ФОТОГРАФИЮ -->
+                        <img src="https://via.placeholder.com/600x400/8B0000/FFFFFF?text=Дополнительный+документ" 
+                             alt="Дополнительный документ" 
+                             class="doc-img">
+                    </div>
+                    <div class="doc-title">Дополнительный документ</div>
+                </div>
+                
+                <!-- Добавьте больше документов при необходимости -->
+                <!-- 
+                <div class="doc-item">
+                    <div class="doc-img-container">
+                        <span class="doc-number">Док. 5</span>
+                        <img src="ваш_документ_5.jpg" alt="Название документа" class="doc-img">
+                    </div>
+                    <div class="doc-title">Название документа</div>
+                </div>
+                -->
+            </div>
+            
+            <!-- Блок для добавления новых документов -->
+            <div class="instruction" style="margin-top: 40px;">
+                <h3>Как добавить больше документов:</h3>
+                <p>Скопируйте этот блок и вставьте в конец раздела .doc-grid:</p>
+                <pre><code>&lt;div class="doc-item"&gt;
+    &lt;div class="doc-img-container"&gt;
+        &lt;span class="doc-number"&gt;Док. X&lt;/span&gt;
+        &lt;img src="ваш_документ.jpg" alt="Название документа" class="doc-img"&gt;
+    &lt;/div&gt;
+    &lt;div class="doc-title"&gt;Название документа&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="doc-footer">
+        <div class="container">
+            <p>&copy; 2016 ООО «ГранитКомплексСтрой». Все права защищены.</p>
+            <p>г. Минск, ул. Корш-Саблина, д. 9, помещение 5Н</p>
+            <p>Телефон: +375 29 133-68-83 | Email: info-gkstroy@yandex.by</p>
+        </div>
+    </footer>
+
+    <script>
+        // Плавный скролл при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Если в URL есть якорь, прокручиваем к нему
+            if(window.location.hash) {
+                setTimeout(function() {
+                    const element = document.querySelector(window.location.hash);
+                    if(element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
