@@ -594,150 +594,7 @@
                 </div>
                 
                 
-                <div class="docs-tab-container">
-    <div class="docs-tab-header">
-        <div class="docs-tab-title">📄 Документация компании</div>
-        <button class="docs-toggle-btn" onclick="toggleDocs()">▼</button>
-    </div>
-    
-    <div class="docs-tab-content" id="docsContent">
-        <div class="docs-list">
-            <div class="doc-item">
-                <div class="doc-item-header">
-                    <span class="doc-number">Док. 001</span>
-                    <span class="doc-date">12.11.2019</span>
-                </div>
-                <h4>Свидетельство о регистрации</h4>
-                <p><strong>Министерство образования и науки РФ</strong></p>
-                <p>г. Екатеринбург, ул. Ленина, д. 10, каб. 101</p>
-                <p>Отдел по делам физических лиц</p>
-                <p class="company-info"><strong>ООО "СБУ-СТРОЙ-ЕД"</strong><br>
-                г. Екатеринбург, ул. Ленина, д. 10, корп. 1, офис 102</p>
-            </div>
-            
-            <div class="doc-item">
-                <div class="doc-item-header">
-                    <span class="doc-number">Док. 002</span>
-                    <span class="doc-date">03.11.2021</span>
-                </div>
-                <h4>Свидетельство о регистрации</h4>
-                <p><strong>Министерство образования и науки РФ</strong></p>
-                <p>г. Екатеринбург, ул. Ленина, д. 10, каб. 101</p>
-                <p>Отдел по делам физических лиц</p>
-                <p class="company-info"><strong>ООО "СБУ-СТРОЙ-ЕД"</strong><br>
-                г. Екатеринбург, ул. Ленина, д. 10, корп. 1, офис 102</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-.docs-tab-container {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    margin: 20px 0;
-    overflow: hidden;
-}
-
-.docs-tab-header {
-    background: linear-gradient(to right, #2c3e50, #3498db);
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.docs-tab-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.docs-toggle-btn {
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: transform 0.3s;
-}
-
-.docs-tab-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-.docs-tab-content.active {
-    max-height: 1000px;
-}
-
-.docs-list {
-    padding: 20px;
-}
-
-.doc-item {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 15px;
-    transition: border-color 0.3s;
-}
-
-.doc-item:hover {
-    border-color: #3498db;
-}
-
-.doc-item-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.doc-number {
-    background: #f1f8ff;
-    padding: 3px 10px;
-    border-radius: 4px;
-}
-
-.doc-date {
-    background: #f8f9fa;
-    padding: 3px 10px;
-    border-radius: 4px;
-}
-
-.company-info {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 6px;
-    margin-top: 15px;
-    border-left: 4px solid #3498db;
-}
-</style>
-
-<script>
-function toggleDocs() {
-    const content = document.getElementById('docsContent');
-    const button = document.querySelector('.docs-toggle-btn');
-    
-    content.classList.toggle('active');
-    button.textContent = content.classList.contains('active') ? '▲' : '▼';
-}
-
-// Автооткрытие при загрузке (если нужно)
-document.addEventListener('DOMContentLoaded', function() {
-    // Раскомментируйте, если хотите чтобы вкладка открывалась автоматически
-    // toggleDocs();
-});
-</script>    
-                        
+                
                     
                     
                         
@@ -946,6 +803,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
