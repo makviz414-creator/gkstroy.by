@@ -889,17 +889,22 @@
     <script>
         // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+    anchor.addEventListener('click', function(e) {
+        // Если это ссылка на документацию.html, не отменяем стандартное поведение
+        if(this.getAttribute('href').includes('.html')) {
+            return; // Позволяем браузеру обработать переход
+        }
+        
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
                     });
                 }
             });
@@ -1008,5 +1013,6 @@
     </script>
 </body>
 </html>
+
 
 
