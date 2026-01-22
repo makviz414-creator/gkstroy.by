@@ -33,11 +33,10 @@
         }
 
         html, body {
-            overflow-x: hidden; /* Убираем горизонтальный скролл */
-            max-width: 100%; /* Ограничиваем ширину */
+            overflow-x: hidden;
+            max-width: 100%;
             width: 100%;
         }
-        
 
         body {
             line-height: 1.6;
@@ -53,14 +52,14 @@
 
         /* Header Styles - ТЕПЕРЬ БЕЛЫЙ ФОН */
         header {
-            background-color: #ffffff; /* БЕЛЫЙ ФОН */
-            color: #333; /* ТЕМНЫЙ ТЕКСТ ДЛЯ КОНТРАСТА */
+            background-color: #ffffff;
+            color: #333;
             padding: 15px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 3px solid #8B0000; /* КРАСНАЯ ГРАНИЦА СНИЗУ */
+            border-bottom: 3px solid #8B0000;
         }
 
         .header-container {
@@ -79,7 +78,7 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #8B0000; /* КРАСНЫЙ ЦВЕТ ДЛЯ ССЫЛКИ */
+            color: #8B0000;
         }
 
         .logo-image {
@@ -93,10 +92,6 @@
             transform: scale(1.05);
         }
 
-        .logo-text-mobile {
-            display: none;
-        }
-
         .contact-header {
             text-align: right;
         }
@@ -107,16 +102,53 @@
         }
 
         .phone-icon {
-            color: #8B0000; /* КРАСНЫЙ ЦВЕТ ДЛЯ ИКОНКИ ТЕЛЕФОНА */
+            color: #8B0000;
             margin-right: 8px;
-            background-color: #f0f0f0; /* СВЕТЛЫЙ ФОН */
+            background-color: #f0f0f0;
             padding: 5px;
             border-radius: 50%;
         }
 
         .red-accent {
-            color: #8B0000; /* КРАСНЫЙ ЦВЕТ ДЛЯ АКЦЕНТОВ */
+            color: #8B0000;
             font-weight: 700;
+        }
+
+        /* Навигационное меню */
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #8B0000;
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+
+        .nav-link.active {
+            color: #8B0000;
+            background-color: rgba(139, 0, 0, 0.1);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 15px;
+            right: 15px;
+            height: 2px;
+            background-color: #8B0000;
         }
 
         /* Hero Section */
@@ -236,6 +268,133 @@
 
         .service-content p {
             color: #333;
+        }
+
+        /* Documentation Section - В ЦВЕТАХ САЙТА */
+        .documentation {
+            padding: 80px 0;
+            background-color: #f8f8f8;
+            border-top: 3px solid #8B0000;
+            border-bottom: 3px solid #8B0000;
+        }
+
+        .doc-container {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.15);
+            border: 2px solid #8B0000;
+        }
+
+        .doc-header {
+            background: linear-gradient(to right, #8B0000, #B22222);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border-bottom: 3px solid #000000;
+        }
+
+        .doc-header h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .doc-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .doc-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .doc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .doc-content.active {
+            max-height: 2000px;
+        }
+
+        /* Галерея документов */
+        .doc-gallery {
+            padding: 30px;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .doc-item {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .doc-item:hover {
+            border-color: #8B0000;
+            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .doc-img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f8f8;
+        }
+
+        .doc-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .doc-item:hover .doc-img {
+            transform: scale(1.05);
+        }
+
+        .doc-title {
+            padding: 15px;
+            text-align: center;
+            background: #000000;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .doc-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(139, 0, 0, 0.9);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         /* About Section */
@@ -429,13 +588,6 @@
             color: #aaaaaa;
         }
 
-        .black-bg {
-            background-color: #000000;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 3px;
-        }
-
         /* Responsive Styles */
         @media (max-width: 992px) {
             .about-content {
@@ -449,6 +601,10 @@
             .section-title {
                 font-size: 2.2rem;
             }
+            
+            .doc-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -460,6 +616,12 @@
             
             .contact-header {
                 text-align: center;
+            }
+            
+            .nav-menu {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
             }
             
             .hero {
@@ -491,6 +653,22 @@
                 gap: 25px;
                 text-align: center;
             }
+            
+            .doc-header {
+                padding: 15px 20px;
+            }
+            
+            .doc-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .doc-img-container {
+                height: 200px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -519,27 +697,31 @@
             .logo-image {
                 height: 50px;
             }
-        }
-
-        /* Стили для логотипа с белой обводкой (если логотип темный) */
-        .logo-image.has-border {
-            border: 2px solid #8B0000;
-            border-radius: 4px;
-            padding: 3px;
-            background-color: rgba(255, 255, 255, 0.1);
+            
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header - ТЕПЕРЬ С БЕЛЫМ ФОНОМ -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
                 <a href="/" class="logo-link">
-                    <!-- Замените src на путь к вашему логотипу -->
                     <img src="Лого ГКС.png" alt="ГранитКомплексСтрой" class="logo-image">
                 </a>
             </div>
+            
+            <div class="nav-menu">
+                <a href="#services" class="nav-link">Наши услуги</a>
+                <a href="#documentation" class="nav-link">Документация</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+                <a href="#details" class="nav-link">Реквизиты</a>
+            </div>
+            
             <div class="contact-header">
                 <p style="display: flex;">
                     <i class="fas fa-phone-alt phone-icon" style="width: 20px;"></i>
@@ -550,11 +732,6 @@
                     <i class="fas fa-envelope email-icon" style="width: 20px; text-align: center;"></i>
                     <span class="red-accent" style="margin-left: 8px;">info-gkstroy@yandex.by</span>
                 </p>    
-            </div>
-            <div class="footer-links">
-                <a href="#services" style="color: black;"><i class="fas fa-chevron-right"></i> Наши услуги</a>
-                <a href="#contacts" style="color: black;"><i class="fas fa-chevron-right"></i> Контакты</a>
-                <a href="#details" style="color: black;"><i class="fas fa-chevron-right"></i> Реквизиты</a>
             </div>
         </div>
     </header>
@@ -593,15 +770,6 @@
                     </div>
                 </div>
                 
-                
-                
-                    
-                    
-                        
-                        
-                    
-                
-                
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-hard-hat"></i>
@@ -615,6 +783,89 @@
         </div>
     </section>
 
+    <!-- Documentation Section -->
+    <section class="documentation" id="documentation">
+        <div class="container">
+            <h2 class="section-title">Документация компании</h2>
+            <div class="doc-container">
+                <div class="doc-header" onclick="toggleDocumentation()">
+                    <h2><i class="fas fa-file-alt"></i> Свидетельства о регистрации и лицензии</h2>
+                    <button class="doc-toggle" id="docToggle">▼</button>
+                </div>
+                <div class="doc-content active" id="docContent">
+                    <div class="doc-gallery">
+                        <div class="doc-grid">
+                            <!-- ПРИМЕР 1: Замените этот блок на ваш документ -->
+                            <div class="doc-item">
+                                <div class="doc-img-container">
+                                    <span class="doc-number">Док. 1</span>
+                                    <!-- ЗАМЕНИТЕ ЭТОТ SRC НА ПУТЬ К ВАШЕЙ ФОТОГРАФИИ -->
+                                    <img src="https://via.placeholder.com/600x400/8B0000/FFFFFF?text=Свидетельство+1" alt="Свидетельство о регистрации" class="doc-img">
+                                </div>
+                                <div class="doc-title">Свидетельство о регистрации</div>
+                            </div>
+                            
+                            <!-- ПРИМЕР 2: Замените этот блок на ваш документ -->
+                            <div class="doc-item">
+                                <div class="doc-img-container">
+                                    <span class="doc-number">Док. 2</span>
+                                    <!-- ЗАМЕНИТЕ ЭТОТ SRC НА ПУТЬ К ВАШЕЙ ФОТОГРАФИИ -->
+                                    <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Лицензия" alt="Лицензия на деятельность" class="doc-img">
+                                </div>
+                                <div class="doc-title">Лицензия на деятельность</div>
+                            </div>
+                            
+                            <!-- ПРИМЕР 3: Замените этот блок на ваш документ -->
+                            <div class="doc-item">
+                                <div class="doc-img-container">
+                                    <span class="doc-number">Док. 3</span>
+                                    <!-- ЗАМЕНИТЕ ЭТОТ SRC НА ПУТЬ К ВАШЕЙ ФОТОГРАФИИ -->
+                                    <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Устав+компании" alt="Устав компании" class="doc-img">
+                                </div>
+                                <div class="doc-title">Устав компании</div>
+                            </div>
+                            
+                            <!-- ПРИМЕР 4: Замените этот блок на ваш документ -->
+                            <div class="doc-item">
+                                <div class="doc-img-container">
+                                    <span class="doc-number">Док. 4</span>
+                                    <!-- ЗАМЕНИТЕ ЭТОТ SRC НА ПУТЬ К ВАШЕЙ ФОТОГРАФИИ -->
+                                    <img src="https://via.placeholder.com/600x400/8B0000/FFFFFF?text=Доп.+документ" alt="Дополнительный документ" class="doc-img">
+                                </div>
+                                <div class="doc-title">Дополнительный документ</div>
+                            </div>
+                            
+                            <!-- КАК ДОБАВИТЬ ЕЩЕ ДОКУМЕНТЫ: -->
+                            <!-- 
+                            1. Скопируйте блок .doc-item 
+                            2. Вставьте его после последнего .doc-item
+                            3. Измените номер в .doc-number
+                            4. Замените src в теге <img> на путь к вашей фотографии
+                            5. Измените текст в .doc-title на название вашего документа
+                            -->
+                        </div>
+                        
+                        <!-- Инструкция для пользователя -->
+                        <div style="margin-top: 40px; padding: 20px; background: #f8f8f8; border-radius: 8px; border-left: 4px solid #8B0000;">
+                            <h3 style="color: #8B0000; margin-bottom: 15px;">Как добавить свои фотографии документов:</h3>
+                            <ol style="margin-left: 20px; line-height: 1.8;">
+                                <li><strong>Подготовьте фотографии:</strong> Сделайте четкие фотографии или сканы ваших документов</li>
+                                <li><strong>Загрузите на хостинг:</strong> Разместите фотографии в папке с вашим сайтом или на файловом хостинге</li>
+                                <li><strong>Замените пути к изображениям:</strong> В коде выше найдите блоки с комментариями "ЗАМЕНИТЕ ЭТОТ SRC" и замените <code>src="..."</code> на пути к вашим фотографиям</li>
+                                <li><strong>Пример замены:</strong> 
+                                    <br><code>src="путь_к_вашей_фотографии/свидетельство.jpg"</code>
+                                    <br>или если фотографии в той же папке что и сайт:
+                                    <br><code>src="свидетельство.jpg"</code>
+                                </li>
+                                <li><strong>Измените названия:</strong> В блоке <code>.doc-title</code> напишите названия ваших документов</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about">
         <div class="container">
@@ -622,7 +873,7 @@
                 <div class="about-text">
                     <h2>О компании</h2>
                     <p><span class="red-accent">"ГранитКомплексСтрой"</span> — это ваш надежный и долгосрочный партнер на рынке услуг по выполнению строительно-монтажных и ремонтно-отделочных работ с предоставлением сопутствующих услуг как на государственных объектах, финансируемых за счет республиканского, районного, местного бюджетов, так и на частных объектах, финансируемых за счет собственных средств.</p>
-                    <p>Мы обеспечиваем высокое качество работ, соблюдение сроков и предоставляем гарантию на выполненные работы до 60 месяцев</span>.</p>
+                    <p>Мы обеспечиваем высокое качество работ, соблюдение сроков и предоставляем гарантию на выполненные работы <span class="highlight">до 60 месяцев</span>.</p>
                     <p>Наша команда состоит из опытных специалистов с многолетним стажем в строительной отрасли, что позволяет нам успешно реализовывать проекты любой сложности.</p>
                 </div>
                 <div class="about-image">
@@ -661,7 +912,6 @@
                     <div class="contact-details">
                         <p><i class="fas fa-map-marker-alt"></i><strong>Юридический адрес:</strong>
                         <p><br>220040, г. Минск, ул. Корш-Саблина, д. 9, помещение 5Н</p>
-                        
                     </div>
                 </div>
             </div>
@@ -678,7 +928,7 @@
                         <h3>Общая информация</h3>
                         <p><strong>Название:</strong> <span class="red-accent">ООО «ГранитКомплексСтрой»</span></p>
                         <p><strong>Адрес:</strong> 220040, г. Минск, ул. Корш-Саблина, д. 9, помещение 5Н</p>
-                        <p><strong>УНП:</strong> 192739317</span></p>
+                        <p><strong>УНП:</strong> 192739317</p>
                         <p><strong>Директор:</strong> Ткачук Степан Григорьевич (на основании Устава)</p>
                     </div>
                     
@@ -688,11 +938,6 @@
                             <p><strong>ЗАО «МТБанк»:</strong></p>
                             <p><strong>IBAN:</strong> BY13MTBK30120001093300074139</p>
                             <p><strong>BIC:</strong> MTBKBY22</p>
-                        </div>
-                        <div class="bank-details">
-                            
-                            
-                            
                         </div>
                     </div>
                 </div>
@@ -710,6 +955,7 @@
                 </div>
                 <div class="footer-links">
                     <a href="#services"><i class="fas fa-chevron-right"></i> Наши услуги</a>
+                    <a href="#documentation"><i class="fas fa-chevron-right"></i> Документация</a>
                     <a href="#contacts"><i class="fas fa-chevron-right"></i> Контакты</a>
                     <a href="#details"><i class="fas fa-chevron-right"></i> Реквизиты</a>
                 </div>
@@ -750,7 +996,6 @@
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
                     entry.target.classList.add('animate');
-                    // Добавляем небольшую задержку для эффекта последовательного появления
                     entry.target.style.opacity = '0';
                     entry.target.style.transform = 'translateY(20px)';
                     
@@ -768,9 +1013,34 @@
             observer.observe(card);
         });
         
+        // Наблюдаем за карточками документации
+        document.querySelectorAll('.doc-item').forEach(card => {
+            observer.observe(card);
+        });
+        
         // Наблюдаем за блоками контактов
         document.querySelectorAll('.contact-info').forEach(card => {
             observer.observe(card);
+        });
+        
+        // Функция для переключения документации
+        function toggleDocumentation() {
+            const content = document.getElementById('docContent');
+            const button = document.getElementById('docToggle');
+            
+            content.classList.toggle('active');
+            button.textContent = content.classList.contains('active') ? '▲' : '▼';
+        }
+        
+        // Автоматическое открытие документации при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            // Автоматически открываем раздел документации
+            const docContent = document.getElementById('docContent');
+            const docToggle = document.getElementById('docToggle');
+            if(docContent && docToggle) {
+                docContent.classList.add('active');
+                docToggle.textContent = '▲';
+            }
         });
         
         // Код для автоматического скрытия/показа хедера при прокрутке
@@ -781,16 +1051,13 @@
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
             if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Прокрутка вниз - скрываем хедер
                 header.style.transform = 'translateY(-100%)';
                 header.style.transition = 'transform 0.3s ease';
             } else {
-                // Прокрутка вверх - показываем хедер
                 header.style.transform = 'translateY(0)';
                 header.style.transition = 'transform 0.3s ease';
             }
             
-            // Если мы в самом верху страницы - всегда показываем хедер
             if (scrollTop < 50) {
                 header.style.transform = 'translateY(0)';
             }
@@ -798,43 +1065,27 @@
             lastScrollTop = scrollTop;
         });
         
-        console.log('Сайт компании "ГранитКомплексСтрой" загружен с белой шапкой');
+        // Подсветка активной ссылки в навигации
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
